@@ -25,7 +25,7 @@ function draw() {
 }
 
 function mousePressed() {
-  if(mouseX>=100 && mouseX<=200 && mouseY>=100 && mouseY<=120){
+  if(mouseX>=200 && mouseX<=300 && mouseY>=100 && mouseY<=150){
     drop = true;
     reset();
   }; 
@@ -38,7 +38,7 @@ function reset() {
 function Mover(m,x,y) {
   this.visible = true;
   this.mass = m;
-  this.position = createVector(100, 100);
+  this.position = createVector(250, 100);
   this.velocity = createVector(0,0);
   this.acceleration = createVector(0,0);
 }
@@ -58,10 +58,10 @@ Mover.prototype.display = function() {
   strokeWeight(3);
   fill(200,200);
   if(drop===true){
-    rect(this.position.x,this.position.y,this.mass*100,this.mass*20);
+    rect(this.position.x,this.position.y,this.mass*100,this.mass*50);
   }
   else{
-    rect(100,100,100,20);
+    rect(250,100,100,50);
   }
 };
 
