@@ -22,18 +22,18 @@ function draw() {
     rect(100, 100, 150, 50);
     rect(350, 100, 150, 50)
     
-    var gravity = createVector(0, 0.1*square[0].mass);
-      
-    if(drop===true){
-      square[0].applyForce(gravity);
-      square[0].update();
-      square[0].display();
-      square[0].checkEdges();
-    } 
-    else{
-      square[0].display();
-    }
-    
+    for (var i = 0; i < square.length; i++) {
+      var gravity = createVector(0, 0.1*square[i].mass);  
+      if(drop===true){
+        square[i].applyForce(gravity);
+        square[i].update();
+        square[i].display();
+        square[i].checkEdges();
+      } 
+      else{
+        square[i].display();
+      }
+    }  
 }
 
 function mousePressed() {
@@ -44,11 +44,10 @@ function mousePressed() {
 }
 
 function reset() {
-  square[0] = new Mover(true, 1, mouseX, mouseY);
+  square[0] = new Mover(1, mouseX, mouseY);
 }
 
-function Mover(v,m,x,y) {
-  this.visible = v;
+function Mover(m,x,y) {
   this.mass = m;
   this.position = createVector(250, 100);
   this.velocity = createVector(0,0);
@@ -67,7 +66,6 @@ Mover.prototype.update = function() {
 };
 
 Mover.prototype.display = function() {
-  //strokeWeight(3);
   noStroke();
   fill('#196696');
   if(drop===true){
@@ -80,8 +78,7 @@ Mover.prototype.display = function() {
 
 Mover.prototype.checkEdges = function() {
   if (this.position.y > (height - this.mass*10)) {
-    this.velocity.y = 0;
-    this.position.y = 1000;
+    square[0] = null;
   }
 };
 
