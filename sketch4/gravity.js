@@ -10,12 +10,12 @@ function draw() {
     noStroke();
     fill("#357266");
     rect(15, 10, 20, 20);
-    rect(100, 320, 30, 30)
-    rect(50, 500, 24, 24)
-    rect(450, 920, 35, 35)
-    rect(325, 200, 15, 15)
-    rect(480, 460, 41, 41)
-    rect(288, 912, 12, 12)
+    rect(100, 320, 30, 30);
+    rect(50, 550, 24, 24);
+    rect(450, 920, 35, 35);
+    rect(325, 200, 15, 15);
+    rect(480, 460, 41, 41);
+    rect(288, 912, 12, 12);
 
   for (var i = 0; i < square.length; i++) {
     var gravity = createVector(0, 0.1*square[0].mass);
@@ -26,13 +26,14 @@ function draw() {
   } 
 
  fill("#0E3B43");
-    ellipse(100, 100, 20, 20)
-    ellipse(220, 700, 37, 37)
-    ellipse(550, 75, 25, 25)
-    ellipse(312, 515, 10, 10)
-    ellipse(22, 900, 13, 13)
-    ellipse(524, 775, 18, 18)
-    ellipse(388, 350, 30, 30)
+    ellipse(130, 100, 20, 20);
+    ellipse(220, 700, 37, 37);
+    ellipse(550, 75, 25, 25);
+    ellipse(312, 515, 10, 10);
+    ellipse(22, 900, 13, 13);
+    ellipse(524, 775, 18, 18);
+    ellipse(388, 350, 30, 30);
+    ellipse(590, 234, 8, 8);
 
 }
 
