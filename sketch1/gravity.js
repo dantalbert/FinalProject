@@ -1,5 +1,6 @@
 var square = [];
 var drop;
+var gone = false;
 
 function setup() {
   createCanvas(600, 1000);
@@ -8,7 +9,6 @@ function setup() {
 } 
 
 function draw() {
-  //background(127);
     background('#8BBCBB');
 
     fill('#3B0763');
@@ -37,7 +37,7 @@ function draw() {
 }
 
 function mousePressed() {
-  if(mouseX>=250 && mouseX<=350 && mouseY>=100 && mouseY<=150){
+  if(mouseX>=250 && mouseX<=350 && mouseY>=100 && mouseY<=150 && gone===false){
     drop = true;
     reset();
   }; 
@@ -79,6 +79,9 @@ Mover.prototype.display = function() {
 Mover.prototype.checkEdges = function() {
   if (this.position.y > (height - this.mass*10)) {
     square[0] = null;
+  };
+  if(this.position.y > 100){
+    gone = true;
   }
 };
 
